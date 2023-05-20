@@ -1,0 +1,24 @@
+lo que quiero lograr es un juego de memoria. 
+Primero se tiene que iniciar el dom mostrando un TITULAR debajo el TIEMPO al lado de un 
+boton que diga INICIAR ahi comienza el juego. 
+Debajo del tiempo, hay CUATRO filas con CUATRO cards en columna cada una. 
+cuando el jugador haga click sobre una CARD se debe dar vuelta y enseñar una imagen
+(es decir, traer el div que contiene esa card, darle un evento "click" y llamar a una funcion
+que recorra (con un FOR) el objeto y muestra la imagen correspondiente.) 
+Luego tiene que hacer click en otra CARD (se repite el proceso anterior) si las cards
+NO COINCIDEN se deven volver a dar vuelta las dos. SI COINCIDEN se deben quedar como estan 
+y añadir un ACIERTO al jugador. (para que coincidad tiene que tener la misma img y id)
+Si el jugador logra encontrar todas las coincidencias antes que se acabe el tiempo gana. 
+
+Hay que hacer un FOR para recorrer un objeto asi mostrar imagenes 
+Hay que hacer un If else o swicht para saber si la img y el id coinciden y asi mantener la img
+Hay que agregar una date() o algo para que corra el tiempo y linkearlo a la posibilada que tenga
+de segir jugando (clickeando)
+
+FUNCIONES 
+Lo que pienso hacer es: primero los divs de arriba con la funcion primera 
+despues los divs de abajo con la funcion segunda
+
+No puedo usar dos ID iguales en un DIV 
+Si uso la misma class name da vuelta siempre todos. 
+como hago una funncion para que detecte cada clase ? 

@@ -1,0 +1,143 @@
+
+.tarjetas{
+  /* position: absolute;
+  top: 50%;
+  left: 50%; */
+  /* transform: translate(-50%, -50%); */
+  width: 200px;
+  height: 200px;
+  margin: 15px;
+  background-color: #ff0000;
+  text-align: center;
+  line-height: 200px;
+  cursor: pointer;
+  transition: opacity 0.5s;
+}
+
+#uno{
+  display: none;
+}
+
+#primerDiv, #segundoDiv {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 200px;
+    height: 200px;
+    background-color: #f1f1f1;
+    text-align: center;
+    line-height: 200px;
+    cursor: pointer;
+    transition: opacity 0.5s;
+  }
+  
+  #segundoDiv {
+    display: none;
+    background-color: #d02626;
+  }
+  
+/* ACA EMPIEZA 👇 */
+
+/* .container{
+  display: inline-block;
+  flex-direction: row;
+  justify-items: center;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+} */
+
+.card{
+  display: inline-block;
+  flex-direction: row;
+  /* transform: translate(-50%, -50%); */
+  width: 140px;
+  height: 160px;
+  background-color: #f90707;
+  cursor: pointer;
+    transition: opacity 0.5s;
+  
+}
+
+#segundaCard, #terceraCard, #cuartaCard, #quintaCard{
+  display: none;
+  background-color: #26d0ae;
+
+}
+
+
+.card:hover{
+    cursor: pointer;
+}
+
+/* .containerDos{
+  display: inline-block;
+  flex-direction: row;
+  justify-items: center;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+} */
+
+
+ /* -------------   ---- -- MI CODIGO 👇 -- ---- ----------- */
+
+ /* .grid-container{
+  display: grid;
+  grid-template: 1fr 1fr 1fr 1fr / 1fr 1fr 1fr 1fr ;
+  background-color: #09394c;
+  margin: auto;
+  width: 80vh;
+  height: 80vh;
+
+  
+ } */
+
+ /* .grid-items{
+    background-color: #094c38;
+    margin: 2px;
+ 
+    text-align: center;
+    justify-content: center;
+    border-radius: 15px;
+   
+ } */
+
+
+
+ .grid-container{
+  display: flex;
+  height: 80vh;
+  width: 80vh;
+  background-color: #d02626
+ }
+
+.divOne{
+  background-color: #26d0ae;
+  /* width: 400px;
+  height: 400px; */
+  width: 50vh;
+  display: flex;
+  
+  justify-content: space-between;
+}
+.divsInside{
+  background-color: #d02626;
+  width: 50px;
+  height: 100px;
+  margin: 2px;
+  display: inline-block;
+
+}
+
+
+
+
+
+
+
+
+
+
+
