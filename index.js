@@ -1,21 +1,4 @@
 
-class Cards {
-    constructor(id, img){
-        this.id = id;
-        this.img = img;
-    }
-}
-
-const cardUno = new Cards ("0","https/")
-const cardDos = new Cards ("1","https/")
-const cardTres = new Cards ("2","https/")
-const cardCuatro = new Cards ("3","https/")
-const cardCinco = new Cards ("4","https/")
-const cardSeis = new Cards ("5","https/")
-
-const id = [0,1,2,3,4,5,6,7]
-
-let clic = 1;
 
 // let traerCaja = document.getElementById("boton")
 // traerCaja.addEventListener("click", divLogin)
@@ -97,13 +80,51 @@ let movimientos = 0;
 let parrafo
 let parrafoDos
 let aciertos = 0;
+let temporizador = false;
+let timer = 3;
+let mostrarTiempo = document.getElementById("tempo")
+let tiempoRegresivo
 
 let numbers = [1,1,2,2,3,3,4,4,5,5,6,6,7,7,8,8]
 numbers.sort(()=> {return Math.random() -0.5})
 console.log(numbers)
 
+function desbloquearCard(){
+    for (let i = 0; i <= 15; i++) {
+        let tarjetaBloqueada = document.getElementById(i);
+        tarjetaBloqueada.innerHTML = numbers[i];
+        tarjetaBloqueada.disabled = true;
+        
+    }
+}
+
+function contarTiempo(){
+    tiempoRegresivo = setInterval(()=>{
+        timer--;
+        mostrarTiempo.innerHTML = timer;
+        if (timer == 0) {
+            clearInterval(tiempoRegresivo);
+            desbloquearCard();
+            
+        }
+    }, 1000);
+
+ 
+    
+}
+
+// FUCION QUE MUESTRA TODAS LAS TARJETAS CUANDO TERMINA EL TIEMPO
+
+
 // FUNCION DEL JUEGO
 function unlockCard (id){
+
+    if (temporizador == false) {
+        contarTiempo();
+        temporizador = true;
+        
+    }
+
     cardUnlock++
     if (cardUnlock == 1) {
         cardOne = document.getElementById(id);
@@ -134,6 +155,14 @@ function unlockCard (id){
             aciertos++
             parrafoDos = document.getElementById("aciertos");
             parrafoDos.innerHTML = aciertos;
+        }else{
+            setTimeout(()=>{
+                cardOne.innerHTML = "";
+                cardTwo.innerHTML = "";
+                cardOne.disabled = false;
+                cardTwo.disabled = false;
+                cardUnlock = 0;
+            }, 2000)
         }
     }
 
