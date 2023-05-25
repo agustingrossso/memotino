@@ -1,64 +1,5 @@
 
 
-// let traerCaja = document.getElementById("boton")
-// traerCaja.addEventListener("click", divLogin)
-
-function divLogin(){ 
-
-   if(clic==1){
-
-   document.getElementById("caja").style.height = "100px";
-
-   clic = clic + 1;
-
-   } else{
-
-       document.getElementById("caja").style.height = "0px";      
-
-    clic = 1;
-
-   }   
-
-}
-
-// 
-
-// let clicks = 1
-
-// FUNCIONES PARA MOSTRAR LOS DIVS - 
-function mostrarSegundoDiv() {
-        let segundoDiv = document.getElementById("segundoDiv");
-        segundoDiv.style.display = "block";
-  }
-
- function mostrarPrimerDiv() {
-    var segundoDiv = document.getElementById("segundoDiv");
-        segundoDiv.style.display = "none";
- }
-
-function mostrar (numero){
-    let mostrar
-    console.log(mostrar)
-    switch (numero) {
-        case "1":
-            mostrar = document.getElementById("uno");
-                mostrar.style.display = "block";
-            break;
-        case 2:
-              mostrar = document.getElementById("2");
-                mostrar.style.display = "block";
-            break;
-        case 3: 
-                 mostrar = document.getElementById("3");
-                    mostrar.style.display = "block";
-            break;
-    
-        default:
-            break;
-    }
-    
-}
-
 // MI CODIGO 👇
 // function mostrarSegundoDiv() {
 //     let segundoDiv = document.getElementsById("segundaCard");
@@ -81,18 +22,43 @@ let parrafo
 let parrafoDos
 let aciertos = 0;
 let temporizador = false;
-let timer = 3;
+let timer = 30;
 let mostrarTiempo = document.getElementById("tempo")
 let tiempoRegresivo
 
 let numbers = [1,1,2,2,3,3,4,4,5,5,6,6,7,7,8,8]
+
+let numerosImg = [
+    {"id":1, "img":"./img/Sharon.png"},
+    {"id":1, "img":"./img/Sharon.png"},
+    {"id":2, "img":"./img/Dicaprio.png"},
+    {"id":2, "img":"./img/Dicaprio.png"},
+    {"id":3, "img":"./img/KillBill.png"},
+    {"id":3, "img":"./img/KillBill.png"},
+    {"id":4, "img":"./img/Landa.png"},
+    {"id":4, "img":"./img/Landa.png"},
+    {"id":5, "img":"./img/Mia.png"},
+    {"id":5, "img":"./img/Mia.png"},
+    {"id":6, "img":"./img/Mr.Pink.png"},
+    {"id":6, "img":"./img/Mr.Pink.png"},
+    {"id":7, "img":"./img/Samuel.png"},
+    {"id":7, "img":"./img/Samuel.png"},
+    {"id":8, "img":"./img/Shoshana.png"},
+    {"id":8, "img":"./img/Shoshana.png"},
+
+]
+
+numerosImg.sort(() => {return Math.random("id") -0.5})
+console.log(numerosImg)
+
+
 numbers.sort(()=> {return Math.random() -0.5})
 console.log(numbers)
 
 function desbloquearCard(){
     for (let i = 0; i <= 15; i++) {
         let tarjetaBloqueada = document.getElementById(i);
-        tarjetaBloqueada.innerHTML = numbers[i];
+        tarjetaBloqueada.innerHTML = `<img src="./img/${numbers[i]}.png" alt="">`;
         tarjetaBloqueada.disabled = true;
         
     }
@@ -129,7 +95,7 @@ function unlockCard (id){
     if (cardUnlock == 1) {
         cardOne = document.getElementById(id);
         firtsResult = numbers[id]
-        cardOne.innerHTML = firtsResult;
+        cardOne.innerHTML = `<img src="./img/${firtsResult}.png" alt="">`;
 
         // DESACTIVAR UNA CARD
         cardOne.disabled = true;
@@ -137,7 +103,7 @@ function unlockCard (id){
     }else if(cardUnlock == 2){
         cardTwo = document.getElementById(id);
         secondResult = numbers[id]
-        cardTwo.innerHTML = secondResult;
+        cardTwo.innerHTML = `<img src="./img/${secondResult}.png" alt="">`;
 
          // DESACTIVAR UNA CARD
          cardTwo.disabled = true;
@@ -180,4 +146,5 @@ function unlockCard (id){
     // CANTIDAD DE MOVIMIENTOS QUE VAN DEL JUGADOR
     
 }
+
 
